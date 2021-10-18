@@ -1,4 +1,14 @@
-# Introduction
+
+![image info](./pictures/ncl.jpg) 
+
+
+# 
+<h1 align="center"> CSC8639 :  Data Science MSc Project and Dissertation </h1>
+<h1 align="center"> Predicting Fibre Classification for Patient and Control Datasets Using Clustering Algorithms </h1>
+<h1 align="center"> Author: Frestie Ngongo <br> Supervisors : </h1>
+<h1 align="center"> CSC8639 :  Data Science MSc Project and Dissertation </h1>
+## Machine Learning for Medicine : 
+
 
 This is some text .
 
@@ -67,7 +77,7 @@ __This text__ is strong
 
 
 <!-- Github Markdown -->
-
+    
 <!-- Code Blocks -->
 
 ```bash
