@@ -4,8 +4,7 @@
 
 # 
 <h1 align="center"> CSC8639 - MSc Data Science  Project and Dissertation </h1>
-<h1 align="center"> Machine Learning for Medicine:
-Predicting Fibre Classification for Patient and Control Datasets using clustering Algorithms
+<h1 align="center"> CLASSIFICATION OF FIBRES FROM THE  MITOCHONRIOAL DISEASE DATASET USING CLUSTERING TECHNIQUES 
 </h1>
 <h1 align="center"> Author: Frestie Ngongo <br> Supervisors: Stephen McGough, Amy Vincent, Conor Lawless, Atif Khan </h1>
 
@@ -79,7 +78,7 @@ The fibres from the IMC were analysed and it was found in the exploratory data a
 The K-Means and GMM algorithm were ran and produced plots of the outcome based on the NDUFB8 protein.
 
 ![image info](./pictures/figure2.png) 
->Figure 2. _Plots of the amounts of logNDUFA13 vs the amounts of logVDAC1 proteins in the raw data, K-Means Model and Gaussian Mixture Model (GMM).
+>_Figure 2. Plots of the amounts of logNDUFA13 vs the amounts of logVDAC1 proteins in the raw data, K-Means Model and Gaussian Mixture Model (GMM).
 The K-Means algorithm showed no distinct separation in the clusters in comparison to the GMM model, which showed two separate groups. The control group appeared to be in the lower left corner of the graph of the KMeans in red, whilst the results for patients showed them in the higher end of the graph in blue. For GMM, there was a clear separation with an observation of 2 distinct clusters forming the ‘V’ shape: control in blue, patients in green._
 	
 
@@ -90,28 +89,60 @@ It was observed that the GMM model produced a better prediction than the K-Means
 The K-Means and GMM algorithm were ran and produced plots of the outcome based on the NDUFB8 protein.
 
 ![image info](./pictures/figure3.png) 
->Figure 3. Plots of the amounts of NDUFB8 vs the amounts of LOG_VDAC1 proteins in the raw data, K-Means Model and Gaussian Mixture Model (GMM).
-The K-Means produced a plot with no clear separation of the 2 clusters. The GMM cluster was observed to have produced 2 clear clusters, control in green, patients in blue. However, of those predicted to be control in the GMM plot, some were identified as patients in the raw data.
+>_Figure 3. Plots of the amounts of NDUFB8 vs the amounts of LOG_VDAC1 proteins in the raw data, K-Means Model and Gaussian Mixture Model (GMM).
+The K-Means produced a plot with no clear separation of the 2 clusters. The GMM cluster was observed to have produced 2 clear clusters, control in green, patients in blue. However, of those predicted to be control in the GMM plot, some were identified as patients in the raw data._
+
+
+NDUFA13 and NDUFB8 proteins were focussed on in this project. Both of these proteins appear to separate the data into two clusters in the GMM however, this is not the case for the K-Means model. The NDUFA13 and NDUFB8 proteins are known as NADH:ubiquinone oxidoreductase subunit A13 and B8 respectively. They function in the transfer of electrons from NADH to the respiratory chain. Both NDUFA13 and NDUFB8 play a significant role in oxidative phosphorylation as the NADH is important in the process of phosphorylating a molecule called ADP into ATP, which is a good store of energy. Based on the results observed, it appeared that both proteins played vital roles in the classification of whether a fibre belonged to a patient or control, according to the GMM. The KMeans graphs, on the other hand, did not show any clear split in the data, hence it was predicted that the K-Means algorithm could not be used for this set of data to predict a label for the fibres.
+
+Following on from this, the proportion of fibres predicted to be RC deficient was produced to identify if there were any trends in the data.
 
 
 ## 5.4 K-Mean results
 ---
+![image info](./pictures/table1.png) 
+>_Table 1. Proportion of Reactive Chain (RC) Deficient Fibres in each patient and in each disease from the K-Means Result.
+The tables shows that controls 1 and 2 were predicted to have a low to zero proportion of reactive chain (RC) deficient fibres, whilst for control 3, they were predicted to have a high percentage of RC deficient fibres. Patients 1 and 2, who have the CI disease variation, were predicted to have almost 100% RC deficient fibres. This was followed by those with the MT-TW disease variant, who were predicted to have around 80% of their fibres as deficient. Patients 3 and 4, although they had the same disease, the algorithm predicted them to have differing amounts of RC deficient fibres. Likewise, the same was true for patients 5, 6 and 7. Those with MT-TG and MT-TE mutations had almost 50% RC deficient fibres and 50% healthy fibres._
+
+
+Table 1, which was produced from the K-Means algorithm, predicted that for the control fibres, a large percentage of 19% of the fibres were RC deficient. This was mainly from the prediction for control 3. The K-Means algorithm had predicted 80.9% of control 3 and 1.4% of control 1’s fibres to be RC deficient fibres. Compared to the two tables for GMM, which both predicted the RC deficient fibres to be <1.5% for the control patients, the K-Means algorithm was observed to perform poorly for the control data.
+
 
 ## 5.5 GMM Table of Results part 1:  LogVDAC1 & LogNDUFA13
 ---
+
+![image info](./pictures/table2.png) 
+>_Table 2. Proportion of Reactive Chain (RC) Deficient Fibres in each patient and in each disease from the GMM Result.
+The GMM model was ran using only the logNDUFA13 and logVDAC1 proteins and produced almost 0% of the controls as having RC deficient fibres. It also predicted patients 1 and 2 to have 100% RC deficient fibres. This was followed by patient 8 (MT-TG) and patient 10 (MT-TW), who were both predicted to have around 80% of their fibres as RC deficient. The deletion patients (patients 3 and 4) both have a very low proportion of RC deficient fibres, which is ideal considering they have the same disease. Contrary to this, the patients with the MT-TL1 disease were predicted to have varying proportions of deficient fibres._
+
+
+
+Analysis of the GMM results from the NDUFB8 protein was also constructed to produce a similar table as in table 2.
+
+
 ## 5.6 GMM Table of Results part 2: LogVDAC1 & LogNDUFB8
 ---
+![image info](./pictures/table3.png)
+>_Table 3. Proportion of Reactive Chain (RC) Deficient Fibres in each patient and in each disease from the GMM Result. 
+The GMM model was ran using only the logNDUFB8 and logVDAC1 proteins and predicted controls 1 and 2 to have a low proportion of RC deficient fibres. It also predicted patients 1 and 2 to have close to 100% RC deficient fibres. Patient 8 (MT-TG) and patient 10 (MT-TW) were both predicted to have over 80% of their fibres as RC deficient. The deletion patients were both predicted to have a low amount of RC deficient fibres averaging 4.0%. The patients with the MT-TL1 disease were predicted to have a similar proportion of deficient fibres for patients 5 and 6, but patient 7 was significantly different from the rest._
 
+
+Tables 1-3 present that, for the CI mitochondrial disease mutation, the proportion of RC deficient fibres were approximately 100%. From this prediction, an assumption could be made that for an individual to be diagnosed with the CI disease mutation, all their fibres would need to be RC deficient. The K-Means table presented differing results for the rest of the mutations in comparison to the GMM. It predicted that 1/3 of the fibres of those with the deletion mutation was RC deficient, whilst also predicting patients 3 and 4 to have significantly different compositions of fibres. This reinforces the unreliability of the K-Means algorithm on this dataset. The GMM tables (tables 2-3), however, presented deletion to have less than 5% of the fibres as RC deficient and instead predicted MT-TL1 to have around 1/3 of the fibres as RC deficient. For GMM, MT-TG and MT-TW were predicted to have similar percentages of RC deficient fibres according to tables 2-3, however, table 1 shows MT-TG and MT-TE having a similar RC deficient fibre proportion. K-Means had predicted MT-TG and MT-TE with 50% of their fibres as deficient and 50% has healthy. Both models predicted MT-TW as having 80.9% of its fibres as deficient. From both models, it was observed that the percentage of RC deficient fibres for CI, MT-TL1 and MT-TW remained slightly consistent at approximately 100%, 35% and 80% respectively. Although the algorithms predicted different results for the other proteins, it was still obvious that besides CI, it was not necessary for all the different variants to have 100% RC deficient fibres to be diagnosed with the disease.
 ## 6. Conclusion
 ---
+The GMM and K-Means clusters were successfully applied to the mitochondrial dataset and seemingly produced differing outcomes. The two algorithms both produced evidence that there were patterns in the NDUFB8 and NDUFA13 proteins that aided in the classification of an individual as having fibres which were RC deficient and non-RC deficient, due to the two clusters witnessed in the GMM plot, and the differing positioning of the control and patient fibres in the K-Means plot. These clustering algorithms were also used to identify the proportions of RC deficient fibres and found that for MT-TL1, other variables may play bigger roles in deciding whether the individual is diagnosed with the disease or not. This was because patients 5, 6 and 7, all known to have the MT-TL1 disease, were predicted to have varying proportions of the RC deficient fibres. However, for the CI and MT-TW diseases, the clustering algorithms had a consistent prediction of the proportions of the RC deficient fibres. Therefore, it could be concluded that the algorithms may be helpful to predict an individual as having the CI and MT-TW disease based on the NDUFB8 and NDUFA13 proteins but could less likely be accurate in predicting whether an individual had the MT-TL1 variant. Furthermore, it was observed that those with the deletion mutation had very low amounts of RC-deficient fibres. This characteristic highlighted that not all fibres in an individual with the deletion variant of the mitochondrial disease were defective in terms of protein proportions.
+
 
 ## 7. Contribution to the States of the Art
 ---
 
+This work contributes to ongoing work to aid in an understanding that the NDUFB8 and NDUFA13 proteins are likely to play significant roles in the diagnosis of an individual into a specific type of mitochondrial disease. It can assist with research carried out by the mitochondrial research institute, highlighting the use of clustering algorithms to make useful predictions, showing that there are likely patterns in the mean protein intensities. Additionally, it has the potential to aid in the process of diagnosing an individual as having the mitochondrial disease or not and specifying which variant they have, which would help to reduce human error and reduce misdiagnosis. 
+
 ## 8. Scope and Limits of the Work and Future Work
 ---
+For future work, it might be good to see if there is a way to differentiate between MT-TG and MT-TW disease types considering the NDUFA13 and NDUFB8 proteins predicted them to have similar proportions as shown in the GMM results table.
+Additionally, looking at MT-TL1, each patient in that same category had varying proportions of RC deficient fibres for the two algorithms. It would be interesting to take this study further to identify what other attributes could influence the classification of an individual into this category considering their varying protein contents. This might include looking into another protein such as MTCO1 or looking at amounts of lactate present. 
 
-[Githublink](https://github.com/FNgongo/MScDissertationLeighSyndrome/blob/main/EDAandBasicML-FNVesion-Copy1.ipynb)
 
 ## References
 ---
@@ -127,117 +158,11 @@ The K-Means produced a plot with no clear separation of the 2 clusters. The GMM 
 10.	Sumayh S. Aljameel, Irfan Ullah Khan, Nida Aslam, Malak Aljabri, Eman S. Alsulmi, "Machine Learning-Based Model to Predict the Disease Severity and Outcome in COVID-19 Patients", Scientific Programming, vol. 2021, Article ID 5587188, 10 pages, 2021. https://doi.org/10.1155/2021/5587188
 11.	Alashwal H, El Halaby M, Crouse J, Abdalla A, Moustafa A. The Application of Unsupervised Clustering Methods to Alzheimer’s Disease. Frontiers in Computational Neuroscience. 2019;13.
 
-## 
----
-
-## 
----
-
-## 
----
-<h1 align="center"> CSC8639 :  Data Science MSc Project and Dissertation </h1>
-## Machine Learning for Medicine : 
 
 
-This is some text .
-
-* Here is the list of item
-* Here is another one.
-<!-- Headings -->
-
-# Heading 1
-## Heading 2
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
-
-
-<!-- Italics -->
-*This text* is itaslic
-
-\*This text\* is itaslic
-
-_This text_ is italic
-
-<!-- Strong -->
-__This text__is strong
-
-**This text** is strong
-
-<!-- Strikethrough -->
-
-~~This text~~ is a strikethrough
-
-<!-- Horizontal rule -->
----
-
----
-
-<!-- Blockquote -->
->This is a quote
-
-<!-- Links -->
-
-[Goldendoer](http://www.goldendoer.co.uk)
-
-[Tables Generator](https://www.tablesgenerator.com/markdown_tables
-"Table Generator")
-
-<!-- UL -->
-* Item 1
-* Item 2
-* Item 3
-    * Nested Item 1
-    * Nested Item 2
-
-<!-- OL -->
-1. Item 1
-1. Item 2
-12. Item 3
-
-<!-- Inline code block -->
-
-<p> This is a paragraph </p>
-
-<!-- Images -->
-![Markdown Logo](https://markdown-here.com/img/icon256.png)
-
-
-
-<!-- Github Markdown -->
-    
-<!-- Code Blocks -->
-
-```bash
- npm install 
- npm start
-```
-
-```javascript
-   function add(num1, num2){
-       return num1 + num2;
-   }
-```
-
-```python
-def add(num1, num2):
-  return num1 +num2
-```
-
-<!-- Table -->
-
-| Name       |  Email             |
-|------------|--------------------|
-| Frestie    |  fretie@iCloud.com |
-| John       |  john@iCloud.com   |
-
-
-<!-- Task List -->
-
-* [x] Task 1
-* [x] Task 2
-* [ ] Task 3
+| Name       |  Email              | LinkedIn          | GitHub            |YouTube Chanel                   |
+|------------|---------------------|-------------------|-------------------|-------------------|
+| Frestie    |  f.ngongo2@ncl.ac.uk|[Frestie Ngongo](http://linkedin.com/in/frestie-ngongo-916781122)|          [FNgongo](https://github.com/FNgongo/MScDissertationLeighSyndrome/blob/main/EDAandBasicML-FNVesion-Copy1.ipynb)|[Frestie Ngongo](https://www.youtube.com/channel/UCxy6Qlb5YlQz2-w6e3metCg)|   |                   |
 
 
 
