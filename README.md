@@ -1,6 +1,4 @@
 
-![image info](./pictures/ncl.jpg) 
-
 
 # 
 <h1 align="center"> CSC8639 - MSc Data Science  Project and Dissertation </h1>
