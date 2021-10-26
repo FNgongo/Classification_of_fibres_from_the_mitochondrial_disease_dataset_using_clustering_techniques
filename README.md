@@ -79,7 +79,7 @@ The fibres from the IMC were analysed and it was found in the exploratory data a
 The k-means and GMM algorithms were used to predict the fibre classifications using the NDUFA13 protein. This was intended to identify whether this protein influenced the classification of the fibre. The results were plotted and compared with the raw data to highlight any noticeable differences.
 
 ![image info](./pictures/figure2.png) 
->_**Figure 3. Plots of the amounts of log(NDUFA13) vs the amounts of log(VDAC1) proteins in the raw data, k-means Model and Gaussian Mixture Model (GMM).**
+>_Figure 3. Plots of the amounts of log(NDUFA13) vs the amounts of log(VDAC1) proteins in the raw data, k-means Model and Gaussian Mixture Model (GMM).
 The k-means plot does not correlate with the natural split of the data as expected, in comparison to the GMM model, which showed two separate groups in a v-shape. The control group appeared to be in the lower left corner of the plot of the k-means in red, whilst the results for patients showed them in the higher end of the plot in blue. For GMM, there was a clear separation with an observation of 2 distinct clusters forming the ‘V’ shape: control in blue, patients in green.
 _
 	
