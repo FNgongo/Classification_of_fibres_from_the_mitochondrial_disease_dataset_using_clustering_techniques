@@ -80,8 +80,7 @@ The k-means and GMM algorithms were used to predict the fibre classifications us
 
 ![image info](./pictures/figure2.png) 
 >_Figure 3. Plots of the amounts of log(NDUFA13) vs the amounts of log(VDAC1) proteins in the raw data, k-means Model and Gaussian Mixture Model (GMM).
-The k-means plot does not correlate with the natural split of the data as expected, in comparison to the GMM model, which showed two separate groups in a v-shape. The control group appeared to be in the lower left corner of the plot of the k-means in red, whilst the results for patients showed them in the higher end of the plot in blue. For GMM, there was a clear separation with an observation of 2 distinct clusters forming the ‘V’ shape: control in blue, patients in green.
-_
+The k-means plot does not correlate with the natural split of the data as expected, in comparison to the GMM model, which showed two separate groups in a v-shape. The control group appeared to be in the lower left corner of the plot of the k-means in red, whilst the results for patients showed them in the higher end of the plot in blue. For GMM, there was a clear separation with an observation of 2 distinct clusters forming the ‘V’ shape: control in blue, patients in green._
 	
 
 It was observed that GMM produced a better prediction than the k-means plot to classify the fibres, as it produced the v-shaped split. The next step was to see if the same was true for the NDUFB8 protein.
@@ -90,7 +89,7 @@ It was observed that GMM produced a better prediction than the k-means plot to c
 The k-means and GMM algorithm were ran and produced plots of the outcome based on the NDUFB8 protein.
 
 ![image info](./pictures/figure3.png) 
->_**Figure 4. Plots of the amounts of log(NDUFB8) vs the amounts of log(VDAC1) proteins in the raw data, k-means Model and GMM.**
+>_Figure 4. Plots of the amounts of log(NDUFB8) vs the amounts of log(VDAC1) proteins in the raw data, k-means Model and GMM.
 The k-means produced a plot with no clear separation of the 2 clusters. The GMM cluster was observed to have produced 2 clear clusters, control in green, patients in blue. However, of those predicted to be control in the GMM plot, some were identified as patients in the raw data._
 
 NDUFA13 and NDUFB8 proteins were focussed on in this project. Both proteins appeared to create plots with splits in the GMM however, this was not the case for the k-means model. The NDUFA13 and NDUFB8 proteins are part of CI, a RC complex known to be deficient in mitochondrial disease. Based on the results observed, it appeared that both proteins played vital roles in the classification of whether a fibre belonged to a patient or control, according to the GMM. The k-means plots, on the other hand, did not show any clear split in the data, hence it was predicted that the k-means could not be used for this set of data to predict a label for the fibres.
